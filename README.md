@@ -1,6 +1,6 @@
 # 📊 Mdash-Pontos: Inteligência de Dados para Gestão de Obras
 > **Foco:** Agilidade na recolha de dados, integridade operacional e decisão financeira estratégica.
-
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_svg)](https://mdash-pontos.streamlit.app/)
 ---
 
 ## 🎯 1. O Problema: Operação vs. Gestão
