@@ -8,6 +8,7 @@ import altair as alt
 # BLOCO 1: CONFIGURAÇÃO E CONEXÃO
 # =================================================================
 st.set_page_config(page_title="Gestão de Obras - Dashboard", layout="wide")
+st.markdown('<html lang="pt-br"></html>', unsafe_allow_html=True)
 
 scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
 
