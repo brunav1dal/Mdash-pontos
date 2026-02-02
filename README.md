@@ -1,50 +1,54 @@
 # 📊 Mdash-Pontos: Inteligência de Dados para Gestão de Obras
-> **Foco:** Agilidade na recolha de dados, integridade operacional e decisão financeira estratégica.
 
-*[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_svg)](https://mdash-pontos.streamlit.app/)
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=Streamlit&logoColor=white)
+![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white)
+![Google Sheets](https://img.shields.io/badge/Google%20Sheets-34A853?style=for-the-badge&logo=google-sheets&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 ---
 
-## 🎯 1. O Problema: Operação vs. Gestão
+### 🌐 Acesse a Aplicação
+[![Acesse o Dashboard](https://img.shields.io/badge/CLIQUE_AQUI_PARA_ABRIR_O_DASHBOARD-000000?style=for-the-badge&logo=streamlit&logoColor=white)](https://mdash-pontos.streamlit.app/)
+
+---
+> **Foco:** Agilidade na recolha de dados, integridade operacional e decisão financeira estratégica.
+
+---
+
+## 🚀 1. Status do Projeto e Tecnologia
+Nesta **versão inicial (MVP)**, o **Streamlit** foi a tecnologia escolhida para a interface a fim de facilitar a construção ágil do Dashboard e garantir que a camada de dados fosse entregue com rapidez aos gestores. 
+
+* **Evolução Visual:** Em versões posteriores, utilizaremos ferramentas complementares de Front-end para tornar a interface ainda mais estilizada e personalizada de acordo com a identidade visual da empresa.
+
+## 🎯 2. O Problema: Operação vs. Gestão
 No ambiente dinâmico de obras, identificámos dois desafios críticos:
-*   **Fricção na Recolha:** Necessidade de um método simples para o **Mestre de Obras** realizar a chamada diária (Fixos, Terceirizados ou em Teste) sem sistemas complexos.
-*   **Atraso e Erros na Decisão:** Dados brutos dificultavam o cálculo de custos com **diárias**, gestão de aumentos salariais e correções de erros de lançamento.
+* **Fricção na Recolha:** Necessidade de um método simples para o **Mestre de Obras** realizar a chamada diária sem sistemas complexos.
+* **Atraso e Erros na Decisão:** Dados brutos dificultavam o cálculo de custos com diárias e correções de erros de lançamento.
 
-## 💡 2. A Solução: Arquitetura de Performance e Integridade
-Este sistema foi desenvolvido com foco em performance, integridade de dados e prevenção de erro humano, aplicando uma estratégia de **distribuição de processamento**:
+## 💡 3. A Solução: Arquitetura de Performance
+Este sistema aplica uma estratégia de **distribuição de processamento**:
 
-1.  **Entrada Inteligente:** Google Forms para a chamada diária, permitindo que o Mestre de Obras **edite respostas enviadas** sem corromper a dashboard, graças à atribuição dinâmica de **IDs únicos** para cada resposta.
-2.  **Engenharia de Dados no Google Sheets:** Uso de **Google Apps Script (JS)** e gatilhos para pré-processamento, garantindo que o Python receba dados já estruturados e refinados.
-3.  **Visualização Ágil:** O Streamlit atua como uma camada de BI veloz, focada exclusivamente na experiência de decisão do gestor.
+1.  **Entrada Inteligente:** Google Forms com atribuição dinâmica de **IDs únicos**, permitindo edições seguras.
+2.  **Engenharia de Dados:** Uso de **Google Apps Script (JS)** para pré-processamento antes do envio para o Python.
+3.  **Visualização Ágil:** Camada de BI em Streamlit focada em UX rápida para tomada de decisão.
 
-## ✨ 3. Funcionalidades de Robustez (Diferenciais)
-O sistema conta com lógica avançada para garantir a consistência total dos dados:
+## ✨ 4. Diferenciais de Robustez
+* **Sanitização Automática:** Limpeza de strings (Upper/Trim) para evitar erros de indexação.
+* **Gestão de Diárias Históricas:** Mudanças salariais não retroagem, preservando a verdade contábil do passado.
+* **Edição Retroativa Segura:** Uso de identificadores imutáveis para rastreabilidade.
 
-*   **Sanitização de Dados (Data Cleaning):** No menu de cadastro, o sistema realiza a limpeza automática de strings (Upper/Trim), evitando conflitos de indexação.
-*   **Alertas de Conflito:** Notificação imediata caso um funcionário não esteja devidamente cadastrado no sistema.
-*   **Gestão de Diárias Históricas:** Permite alterar o valor da diária **sem retroagir** nos dias já contabilizados, preservando a consistência contábil real.
-*   **Edição Retroativa Segura:** Uso de identificadores imutáveis que permitem ao Mestre de Obras modificar respostas no Forms sem prejudicar a dashboard.
-*   **Manutenção de Ciclos:** Função para **limpar dados e iniciar um novo semestre** de forma segura, mantendo o modelo original da planilha.
+## 🤖 5. Roadmap e Futuras Versões
+O projeto prevê uma jornada de amadurecimento tecnológico:
+* **Novos KPIs:** Implementação de métricas de performance preditiva e custo por etapa de obra.
+* **Machine Learning:** Modelos treinados para prever tendências de gastos mensais e detecção de anomalias na assiduidade.
 
-## 🛠️ 4. Especificações Técnicas & Engenharia
-*   **Lógica de Negócio:** Google Apps Script (JavaScript) para normalização determinística e validação defensiva.
-*   **Processamento & UI:** Python, Pandas e Streamlit (focada em UX rápida).
-*   **Fonte de Dados:** Google Sheets API com processamento em memória para reduzir latência.
-*   **Segurança:** Gestão de credenciais via `.gitignore` e `secrets.toml`.
+## 🛠️ 6. Especificações Técnicas
+* **Lógica:** Google Apps Script (JavaScript).
+* **Processamento & UI:** Python, Pandas e Streamlit.
+* **Fonte de Dados:** Google Sheets API.
 
-### Principais técnicas aplicadas:
-*   **Normalização determinística** de dados para matching confiável entre múltiplas fontes.
-*   **Identificador imutável por registro** para assegurar rastreabilidade e permitir edições seguras.
-*   **Preservação de valores históricos** para garantir integridade financeira mesmo após alterações futuras.
-*   **Processamento em memória** para reduzir chamadas à API e melhorar a escalabilidade.
-*   **Sincronização seletiva** para evitar recomputação desnecessária.
-*   **Autocorreção e validação defensiva** para minimizar falhas de entrada do usuário.
-*   **Arquitetura modular** baseada em separação de responsabilidades (SoC).
+---
 
-## 🚀 5. Roadmap e Futuras Versões
-*   **Evolução Estética:** Migração para interfaces mais personalizadas e estilizadas para elevar a UI/UX.
-*   **KPIs Avançados:** Implementação de métricas de produtividade preditiva.
-*   **Machine Learning:** Modelos para prever tendências de gastos, riscos de atrasos e padrões de assiduidade.
-
-## 📂 6. Arquitetura do Fluxo
+## 📂 7. Arquitetura do Fluxo
 ```text
-[Mestre de Obras] -> (Forms + ID Imutável) -> [JS Script (Normalização/Triggers)] -> [Python App] -> [Gestor]
+[Mestre de Obras] -> (Forms + ID Imutável) -> [JS Script (Normalização)] -> [Python App] -> [Gestor]

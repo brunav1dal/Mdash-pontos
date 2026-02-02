@@ -115,9 +115,6 @@ if df_total.empty:
 
 if pendentes:
     st.error(f"🚨 **PENDÊNCIA:** Regularizar cadastro de: {', '.join(pendentes)}")
-# ... restante do código ...
-if pendentes:
-    st.error(f"🚨 **PENDÊNCIA:** Regularizar cadastro de: {', '.join(pendentes)}")
 
 if not sel_turnos or not sel_obras:
     st.warning("Selecione os filtros laterais.")
