@@ -1,5 +1,5 @@
+streamlit>=1.30.0
 pandas
 gspread
 oauth2client
-altair
-streamlit
+altair<5.0.0
