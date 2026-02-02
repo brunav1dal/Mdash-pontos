@@ -66,6 +66,15 @@ def load_data():
 
 df_total, pendentes = load_data()
 
+
+# VERIFICAÇÃO CRÍTICA: Se o DF estiver vazio, pare aqui com uma mensagem clara.
+if df_total.empty:
+    st.error("⚠️ Erro de Dados: Não foi possível ler as informações da planilha.")
+    st.info("Verifique se o e-mail da nova API foi adicionado como 'Editor' na nova planilha.")
+    st.stop() # Isso impede o erro 'KeyError: Turno'
+
+# Só executa o restante se houver dados
+
 # =================================================================
 # BLOCO 3: NAVEGAÇÃO E FILTROS (SIDEBAR)
 # =================================================================
